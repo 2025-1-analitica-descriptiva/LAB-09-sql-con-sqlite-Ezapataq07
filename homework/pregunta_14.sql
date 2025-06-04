@@ -34,7 +34,7 @@
 --  con c13 mayor a 400.
 --
 --  Rta/
---  K0    avg(c21)
+--     K0  avg(c21)
 --  0  A  593.495000
 --  1  B  575.470000
 --  2  C  530.753000
@@ -43,4 +43,16 @@
 --
 --  >>> Escriba su codigo a partir de este punto <<<
 --  
-
+SELECT 
+    tbl1.K0
+    ,avg(c21)
+FROM
+    tbl1 
+LEFT JOIN
+    tbl2 
+ON 
+    tbl1.K1=tbl2.K1
+WHERE
+    c13>400
+GROUP BY 
+    tbl1.K0
